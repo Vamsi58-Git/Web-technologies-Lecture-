@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Zoom Logo</title>
+    <style>
+        body {
+        text-align: center;
+        margin-top: 50px;
+        }
+
+        #logo {
+        width: 100px; 
+        transition: width 0.3s ease;
+        }
+
+        button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        }
+
+    </style>
+    </head>
+        <body>
+        <img id="logo" src="C:/WebDev/ecommerce/imgs/task1.jpg" alt="Logo">
+        <div>
+            <button onclick="zoomIn()">Zoom In</button>
+            <button onclick="zoomOut()">Zoom Out</button>
+        </div>
+            <script>
+                let width=100;
+                function zoomIn()
+                {
+                    width+=5;
+                    document.getElementById("logo").style.width = width + "px";
+                }
+                function zoomOut()
+                {   
+                    width-=5;
+                    document.getElementById("logo").style.width = width + "px";
+                }
+            </script>
+        </body>
+    </html>
