@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .sidenav {
+      height: 100%;         
+      width: 200px;         
+      position: fixed;
+      background-color: #ADD8E6;
+      top: 0;
+      left: 0;
+      padding-top: 20px;
+    }
+
+    .sidenav a {
+      display: block;
+      color: black;
+      padding: 12px;
+      text-decoration: none;
+    }
+
+    .sidenav a:hover {
+      background-color: #5f5391;
+    }
+
+    .main {
+      margin-left: 210px; 
+      padding: 20px;
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    
+    .content-section:target {
+      display: block;
+    }
+
+   
+  </style>
+</head>
+<body>
+
+  <div class="sidenav">
+    <a href="#Gmail">GMAIL</a>
+    <a href="#Inbox">Inbox</a>
+    <a href="#Outbox">Outbox</a>
+    <a href="#Drafts">Drafts</a>
+    <a href="#Spams">Spams</a>
+  </div>
+
+  <div class="main">
+    <div id="Gmail" class="content-section">
+      <h2>Welcome to Gmail!</h2>
+    </div>
+    <div id="Inbox" class="content-section">
+      <h2>Welcome to Inbox!</h2>
+    </div>
+    <div id="Outbox" class="content-section">
+      <h2>Welcome to Outbox!</h2>
+    </div>
+    <div id="Drafts" class="content-section">
+      <h2>Welcome to Drafts!</h2>
+    </div>
+    <div id="Spams" class="content-section">
+      <h2>Welcome to Spams!</h2>
+    </div>
+  </div>
+
+</body>
+</html>
