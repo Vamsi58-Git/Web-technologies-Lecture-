@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Colours in Circle</title> 
+        <style>
+            .circle {
+                width: 150px;
+                height: 150px;
+                border: 3px solid black;
+                border-radius: 50%;
+                background-color: white;
+        </style>
+    </head>
+    <body>
+        <div class="shape circle" id="circle"></div>
+        <br>
+        <label>Primary colour:</label><br><br>
+        <input type="radio" name="PrimaryColour" value="red"> Red<br><br>
+        <input type="radio" name="PrimaryColour" value="blue"> Blue<br><br>
+        <input type="radio" name="PrimaryColour" value="green"> Green<br><br>
+
+        <script>
+            const circle = document.getElementById("circle");
+            const radios = document.getElementsByName("PrimaryColour");
+
+            radios.forEach(radio => {
+                radio.addEventListener("change", function() {
+                    circle.style.backgroundColor = this.value;
+                });
+            });
+        </script>
+    </body>
+</html>
