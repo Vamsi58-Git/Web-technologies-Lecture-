@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validate(){
+            let pwd=document.getElementById("t1").value;
+            let p= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+            if(p.test(pwd)){
+                alert("strong password");
+            }
+            else{
+                alert("weak password");
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <form>
+        <label for="no">password:</label>
+        <input type="password" id="t1" name="t1"><br><br>
+        <input type="submit" value="Validate" onclick="validate()">
+    </form>
+    </body>
+</html>
