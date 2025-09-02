@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validate(){
+                let num=document.getElementById("t1").value;
+                let p=/^\d{10}$/;
+                if(p.test(num)){
+                    alert("valid number");
+                }
+                else{
+                    alert("invalid number")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+        <label for="no"Mobile Number:</label>
+        <input type="text" id="t1" name="t1"><br><br>
+        <input type="submit" value="Validate" onclick="validate()">
+    </form>
+    </body>
+</html>
