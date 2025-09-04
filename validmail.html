@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function processFile() {
+      var fileInput = document.getElementById("fileInput").files[0];
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var lines = e.target.result.split(/\r?\n/);
+        var total = 0, valid = 0, invalid = 0;
+        var validList = "", invalidList = "";
+        for (var i = 0; i < lines.length; i++) {
+          var email = lines[i].trim();
+          if (email.length > 0) {
+            total++;
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              valid++;
+              validList += "<li class='valid'>" + email + "</li>";
+            } else {
+              invalid++;
+              invalidList += "<li class='invalid'>" + email + "</li>";
+            }
+          }
+        }
+        document.getElementById("output").innerHTML =
+          "<h3>Results</h3>" +
+          "<p><b>Total Emails:</b> " + total + "</p>" +
+          "<p><b>Valid Emails:</b> " + valid + "</p>" +
+          "<p><b>Invalid Emails:</b> " + invalid + "</p>" +
+          "<h4>Valid Emails:</h4><ul>" + validList + "</ul>" +
+          "<h4>Invalid Emails:</h4><ul>" + invalidList + "</ul>";
+      };
+      reader.readAsText(fileInput);
+    }
+  </script>
+</head>
+<body>
+  <h2>Email Validator</h2>
+  <label for="fileInput">Select a file:</label>
+  <input type="file" id="fileInput" accept=".txt"><br><br>
+  <button onclick="processFile()">Check Emails</button>
+  <div id="output" style="margin-top: 20px;"></div>
+</body>
+</html>
